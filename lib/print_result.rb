@@ -14,32 +14,32 @@ class PrintResult
       @results = f.readlines
       f.close
     else
-      puts "Файл не найден"
+      raise "Файл не найден"
+    end
+  end
+
+  def solution
+    case @score
+      when 30..33
+        @results[0]
+      when 25..29
+        @results[1]
+      when 19..24
+        @results[2]
+      when 14..18
+        @results[3]
+      when 9..13
+        @results[4]
+      when 4..8
+        @results[5]
+      when 0..3
+        @results[6]
     end
   end
 
   def print_answer
-    if @score >= 30
-      puts "Ваш результат: #{@score}"
-      puts @results[0]
-      elsif @score >= 25
-      puts "Ваш результат: #{@score}"
-      puts @results[1]
-    elsif @score >= 19
-      puts "Ваш результат: #{@score}"
-      puts @results[2]
-    elsif @score >= 14
-      puts "Ваш результат: #{@score}"
-      puts @results[3]
-    elsif @score >= 9
-      puts "Ваш результат: #{@score}"
-      puts @results[4]
-    elsif @score >= 4
-      puts "Ваш результат: #{@score}"
-      puts @results[5]
-    else
-      puts "Ваш результат: #{@score}"
-      puts @results[6]
-    end
+    puts "Ваш результат: #{@score}"
+    puts solution
   end
+
 end

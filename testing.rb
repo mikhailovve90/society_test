@@ -1,8 +1,8 @@
 current_path = File.dirname(__FILE__)
 
-require_relative "#{current_path}/lib/print_result"
-require_relative "#{current_path}/lib/test"
-puts File.exist?("#{current_path}/data/questions.txt")
+require_relative "lib/print_result"
+require_relative "lib/test"
+
 society_test = Test.new
 society_test.read_from_file("#{current_path}/data/questions.txt")
 number = society_test.check_size

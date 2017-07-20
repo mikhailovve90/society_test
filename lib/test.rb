@@ -1,6 +1,5 @@
 require 'unicode_utils/downcase'
 class Test
-
   TYPE_ANSWERS = ["да", "нет", "иногда", "1", "2", "3"]
 
   def initialize
@@ -20,7 +19,7 @@ class Test
       @questions = f.readlines
       f.close
     else
-      puts "Файл не найден"
+      raise "Файл не найден"
     end
   end
 
